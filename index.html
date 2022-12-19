@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="cn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>imageToBank</title>
+    <style>
+      .copy-button {
+        display: block;
+      }
+      .copy-button + .copy-button {
+        margin-top: 10px;
+      }
+      .copyed {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <input type="file" id="fileInput" accept="image/*" />
+    </div>
+    <div>偏移：<input type="text" id="offsetInput" value="0" /></div>
+    <textarea id="codeText" cols="100" rows="10"></textarea>
+    <div>
+      <canvas id="canvas"></canvas>
+    </div>
+    <div id="buttons"></div>
+  </body>
+  <script src="./main.js" mode="module"></script>
+</html>
