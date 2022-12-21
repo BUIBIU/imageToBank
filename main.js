@@ -53,7 +53,7 @@ function rgbToHex(rgb) {
   rgb.forEach((item) => {
     num = num * 256 + item;
   });
-  const str = num.toString(16).padEnd(6, "0");
+  const str = num.toString(16).padStart(8, "0");
   return str;
 }
 
@@ -71,7 +71,8 @@ function transferImageData(image, offset = 0, bankCount = 1) {
   const coreDataManager = new CoreDataManager(offset, bankCount);
   for (let i = 0; i < length; i++) {
     const index = i * 4;
-    const color = imageData.slice(index, index + 3);
+    const color = imageData.slice(index, index + 4);
+    console.log(color);
     const colorHex = "%" + rgbToHex(color);
     coreDataManager.pushPixel(colorHex);
   }
